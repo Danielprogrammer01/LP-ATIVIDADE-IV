@@ -12,7 +12,7 @@
 void cabecalho()
 {
     printf("\n===========================================\n");
-    printf("\t\t2ª Questão");
+    printf("\t\t2Âª QuestÃ£o");
     printf("\n===========================================\n");
 }
 
@@ -43,14 +43,15 @@ float calcularMedia(struct dados_pessoais aluno[])
     float somaNotas[quantidadeDeAlunos];
     float media[999];
 
-    for (i = 0; i < quantidadeDeNotas; i++)
+    for (i = 0; i < quantidadeDeAlunos; i++)
     {
+       
         for (j = 0; j < quantidadeDeNotas; j++)
         {
             somaNotas[i] += aluno[i].notas[j];
         }
         
-        aluno[i].media = somaNotas[i] / quantidadeDeAlunos;  
+        aluno[i].media = somaNotas[i] / quantidadeDeNotas;  
     }
         
     return aluno->media;
@@ -90,25 +91,23 @@ int main()
     {
         fflush(stdin);
 
-        printf("\nDigite o nome do %dº aluno: ", i + 1);
+        printf("\nDigite o nome do %dÂº aluno: ", i + 1);
         gets(alunos[i].nome);
 
-        limpaTela();
+        fflush(stdin);
 
         printf("\nDigite a data de nascimento:\n");
         
         printf("\nDigite a dia: ");
         gets(alunos[i].dataDeNascimento[0]);
-        printf("\nDigite o mês: ");
+        printf("\nDigite o mÃªs: ");
         gets(alunos[i].dataDeNascimento[1]);
         printf("\nDigite o ano: ");
         gets(alunos[i].dataDeNascimento[2]);
 
-        limpaTela();
-        
             for (j = 0; j < quantidadeDeNotas; j++)
             {
-            printf("\nDigite a %dª nota: ", j+1);
+            printf("\nDigite a %dÂª nota: ", j+1);
             scanf("%f",&alunos[i].notas[j]);
             }
         
@@ -128,8 +127,8 @@ int main()
         printf("\n%d - %s", i+1, alunos[i].nome);
         espaco();
         printf("\nData de Nascimento: %s/%s/%s", alunos[i].dataDeNascimento[0], alunos[i].dataDeNascimento[1], alunos[i].dataDeNascimento[2]);
-        printf("\nMédia: %.1f", alunos[i].media);
-        printf("\nSituação: %s", verificarSituacaoDoAluno(alunos));
+        printf("\nMÃ©dia: %.1f", alunos[i].media);
+        printf("\nSituaÃ§Ã£o: %s", verificarSituacaoDoAluno(alunos));
         espaco();
 
     }
